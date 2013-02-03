@@ -5,7 +5,7 @@ if __FILE__ == $0
   keywords = [""]
 	ARGV.each do |file|
     new_keywords = []
-    File.read(file).each do |kwd|
+    File.foreach(file) do |kwd|
       # 空き行があれば無視
       next if kwd.chomp == ""
       keywords.each do |k|
